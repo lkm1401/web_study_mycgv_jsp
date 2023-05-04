@@ -9,8 +9,9 @@
 </head>
 <body>
 	<!-- header -->
-	<iframe src="http://localhost:9000/mycgv/header.html"
-			scrolling="no" width="100%" height="149px" frameborder=0></iframe>	
+	<!-- <iframe src="http://localhost:9000/mycgv_jsp/header.jsp"
+			scrolling="no" width="100%" height="149px" frameborder=0></iframe> -->
+	<jsp:include page="../header.jsp"></jsp:include>
 	
 	<!-- content -->
 	<div class="content">
@@ -40,9 +41,9 @@
 						<td colspan="2">
 							<button type="button" class="btn_style">수정완료</button>
 							<button type="reset" class="btn_style">다시쓰기</button>
-							<a href="board_content.html">
+							<a href="board_content.jsp">
 								<button type="button" class="btn_style">이전페이지</button></a>
-							<a href="board_list.html">
+							<a href="board_list.jsp">
 								<button type="button" class="btn_style">리스트</button></a>							
 						</td>				
 					</tr>
@@ -52,8 +53,9 @@
 	</div>
 	
 	<!-- footer -->
-	<iframe src="http://localhost:9000/mycgv/footer.html"
-			scrolling="no" width="100%" height="500px" frameborder=0></iframe>	
+	<!-- <iframe src="http://localhost:9000/mycgv_jsp/footer.jsp"
+			scrolling="no" width="100%" height="500px" frameborder=0></iframe> -->	
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
 

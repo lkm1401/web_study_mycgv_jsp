@@ -5,12 +5,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
-	<link rel="stylesheet" href="http://localhost:9000/mycgv/css/mycgv.css">
+	<link rel="stylesheet" href="http://localhost:9000/mycgv_jsp/css/mycgv_jsp.css">
 </head>
 <body>
 	<footer>
 		<div class="footer_bg">
-			<img src="http://localhost:9000/mycgv/images/footer_top.png">
+			<img src="http://localhost:9000/mycgv_jsp/images/footer_top.png">
 		</div>
 		<div class="footer_menu">
 			<nav>

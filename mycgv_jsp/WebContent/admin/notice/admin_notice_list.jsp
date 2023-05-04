@@ -9,8 +9,9 @@
 </head>
 <body>
 	<!-- header -->
-	<iframe src="http://localhost:9000/mycgv/header.html"
-			scrolling="no" width="100%" height="149px" frameborder=0></iframe>	
+	<!-- <iframe src="http://localhost:9000/mycgv_jsp_jsp_jsp/header.jsp"
+			scrolling="no" width="100%" height="149px" frameborder=0></iframe> -->
+	<jsp:include page="../../header.jsp"></jsp:include>
 	
 	<!-- content -->
 	<div class="content">
@@ -19,7 +20,7 @@
 			<table class="board_list">
 				<tr>
 					<td colspan="4">
-						<a href="admin_notice_write.html">
+						<a href="admin_notice_write.jsp">
 							<button type="button">등록하기</button>
 						</a>
 					</td>
@@ -32,7 +33,7 @@
 				</tr>
 				<tr>
 					<td>1</td>
-					<td><a href="admin_notice_content.html">CGV 공지사항 입니다.</a></td>
+					<td><a href="admin_notice_content.jsp">CGV 공지사항 입니다.</a></td>
 					<td>1000</td>
 					<td>2023-04-18</td>
 				</tr>
@@ -98,8 +99,9 @@
 	</div>
 	
 	<!-- footer -->
-	<iframe src="http://localhost:9000/mycgv/footer.html"
-			scrolling="no" width="100%" height="500px" frameborder=0></iframe>	
+	<!-- <iframe src="http://localhost:9000/mycgv_jsp_jsp_jsp/footer.jsp"
+			scrolling="no" width="100%" height="500px" frameborder=0></iframe> -->	
+	<jsp:include page="../../footer.jsp"></jsp:include>
 </body>
 </html>
 

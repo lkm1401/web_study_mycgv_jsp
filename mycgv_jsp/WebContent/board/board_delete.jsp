@@ -5,12 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>MYCGV</title>
-<link rel="stylesheet" href="http://localhost:9000/mycgv/css/mycgv.css">
+<link rel="stylesheet" href="http://localhost:9000/mycgv_jsp/css/mycgv_jsp.css">
 </head>
 <body>
 	<!-- header -->
-	<iframe src="http://localhost:9000/mycgv/header.html"
-			scrolling="no" width="100%" height="149px" frameborder=0></iframe>	
+	<!-- <iframe src="http://localhost:9000/mycgv_jsp/header.jsp"
+			scrolling="no" width="100%" height="149px" frameborder=0></iframe> -->
+	<jsp:include page="../header.jsp"></jsp:include>
 	
 	<!-- content -->
 	<div class="content">
@@ -19,7 +20,7 @@
 			<form name="deleteForm" action="#" method="get">
 				<table>
 					<tr>
-						<td><img src="http://localhost:9000/mycgv/images/trash.jpg"></td>
+						<td><img src="http://localhost:9000/mycgv_jsp/images/trash.jpg"></td>
 					</tr>
 					<tr>					
 						<td>정말로 삭제 하시겠습니까?</td>
@@ -27,11 +28,11 @@
 					<tr>
 						<td colspan="2">
 							<button type="button" class="btn_style">삭제완료</button>
-							<a href="board_content.html">
+							<a href="board_content.jsp">
 								<button type="button" class="btn_style">이전페이지</button></a>
-							<a href="board_list.html">
+							<a href="board_list.jsp">
 								<button type="button" class="btn_style">리스트</button></a>
-							<a href="http://localhost:9000/mycgv/index.html">
+							<a href="http://localhost:9000/mycgv_jsp/index.jsp">
 								<button type="button" class="btn_style">홈으로</button></a>
 						</td>				
 					</tr>
@@ -41,10 +42,12 @@
 	</div>
 	
 	<!-- footer -->
-	<iframe src="http://localhost:9000/mycgv/footer.html"
-			scrolling="no" width="100%" height="500px" frameborder=0></iframe>	
+	<!-- <iframe src="http://localhost:9000/mycgv_jsp/footer.jsp"
+			scrolling="no" width="100%" height="500px" frameborder=0></iframe> -->	
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
+
 
 
 

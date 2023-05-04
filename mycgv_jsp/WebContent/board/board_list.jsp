@@ -5,12 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>MYCGV</title>
-<link rel="stylesheet" href="http://localhost:9000/mycgv/css/mycgv.css">
+<link rel="stylesheet" href="http://localhost:9000/mycgv_jsp/css/mycgv_jsp.css">
 </head>
 <body>
 	<!-- header -->
-	<iframe src="http://localhost:9000/mycgv/header.html"
-			scrolling="no" width="100%" height="149px" frameborder=0></iframe>	
+	<!-- <iframe src="http://localhost:9000/mycgv_jsp/header.jsp"
+			scrolling="no" width="100%" height="149px" frameborder=0></iframe> -->
+	<jsp:include page="../header.jsp"></jsp:include>
 	
 	<!-- content -->
 	<div class="content">
@@ -19,7 +20,7 @@
 			<table class="board_list">
 				<tr>
 					<td colspan="5">
-						<a href="board_write.html">
+						<a href="board_write.jsp">
 							<button type="button" class="btn_style2">글쓰기</button>
 						</a>
 					</td>
@@ -33,7 +34,7 @@
 				</tr>
 				<tr>
 					<td>1</td>
-					<td><a href="board_content.html">스즈메 문단속 재밌어요~^^</a></td>
+					<td><a href="board_content.jsp">스즈메 문단속 재밌어요~^^</a></td>
 					<td>123</td>
 					<td>hong1234</td>
 					<td>2023-04-10</td>
@@ -109,10 +110,14 @@
 	</div>
 	
 	<!-- footer -->
-	<iframe src="http://localhost:9000/mycgv/footer.html"
-			scrolling="no" width="100%" height="500px" frameborder=0></iframe>	
+	<!-- <iframe src="http://localhost:9000/mycgv_jsp/footer.jsp"
+			scrolling="no" width="100%" height="500px" frameborder=0></iframe> -->	
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
+
+
+
 
 
 

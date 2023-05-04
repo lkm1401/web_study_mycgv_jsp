@@ -5,12 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>MYCGV</title>
-<link rel="stylesheet" href="http://localhost:9000/mycgv/css/mycgv.css">
+<link rel="stylesheet" href="http://localhost:9000/mycgv_jsp/css/mycgv_jsp.css">
 </head>
 <body>
 	<!-- header -->
-	<iframe src="http://localhost:9000/mycgv/header.html"
-			scrolling="no" width="100%" height="149px" frameborder=0></iframe>	
+	<!-- <iframe src="http://localhost:9000/mycgv_jsp_jsp/header.jsp"
+			scrolling="no" width="100%" height="149px" frameborder=0></iframe> -->
+	<jsp:include page="../header.jsp"></jsp:include>
 	
 	<!-- content -->
 	<div class="content">
@@ -38,9 +39,9 @@
 				</tr>
 				<tr>
 					<td colspan="2">
-						<a href="notice_list.html">
+						<a href="notice_list.jsp">
 							<button type="button" class="btn_style">리스트</button></a>
-						<a href="http://localhost:9000/mycgv/index.html">
+						<a href="http://localhost:9000/mycgv_jsp/index.jsp">
 						<button type="button" class="btn_style">홈으로</button></a>
 					</td>
 				</tr>
@@ -49,8 +50,9 @@
 	</div>
 	
 	<!-- footer -->
-	<iframe src="http://localhost:9000/mycgv/footer.html"
-			scrolling="no" width="100%" height="500px" frameborder=0></iframe>	
+	<!-- <iframe src="http://localhost:9000/mycgv_jsp_jsp/footer.jsp"
+			scrolling="no" width="100%" height="500px" frameborder=0></iframe> -->	
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
 
