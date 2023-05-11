@@ -28,6 +28,7 @@
 							placeholder="*8자 이상 영문으로 입력해주세요" class="input1"
 							id="id" >
 						<button type="button" class="btn_style2" id="btnIdCheck">중복체크</button>
+						<span id="idcheck_msg"></span>
 					</li>
 					<li>
 						<label>비밀번호</label>

@@ -4,6 +4,29 @@ import com.mycgv_jsp.vo.MemberVo;
 
 public class MemberDao extends DBConn{
 	/**
+	 * idCheck - 아이디 중복체크
+	 */
+	public int idCheck(String id) {
+		int result = 0;
+		String sql = "SELECT COUNT(*) FROM MYCGV_MEMBER WHERE ID=?";
+		getPreparedStatement(sql);
+		
+		try {
+			pstmt.setString(1, id);
+			
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				result = rs.getInt(1);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	/**
 	 * insert - 회원가입
 	 */
 	public int insert(MemberVo memberVo) {

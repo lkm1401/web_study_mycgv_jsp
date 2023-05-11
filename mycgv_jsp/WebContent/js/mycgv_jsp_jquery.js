@@ -4,7 +4,28 @@ $(document).ready(function(){
 		회원가입 폼 - 아이디 중복체크
 	********************************************/
 	$("#btnIdCheck").click(function(){
-		alert("idcheck!!");
+		if($("#id").val() == ""){
+			alert("아이디를 입력해주세요");
+			$("#id").focus();
+			return false;
+		}else{
+			$.ajax({
+				url : "idCheckProc.jsp?id="+$("#id").val(),
+				success : function(result){
+					if(result == 1){
+						$("#idcheck_msg").text("이미 사용중인 아이디 입니다. 다시 입력해주세요")
+						.css("color","red").css("font-size","11px").css("display","block")
+						.css("padding","8px 0px 8px 160px");
+						$("#id").val("").focus();
+					}else if(result == 0){
+						$("#idcheck_msg").text("사용 가능한 아이디 입니다")
+						.css("color","blue").css("font-size","11px").css("display","block")
+						.css("padding","8px 0px 8px 160px");
+						$("#pass").focus();
+					}
+				}
+			});
+		}
 	});
 		
 	
@@ -65,6 +86,10 @@ $(document).ready(function(){
 		if($("#id").val() == ""){
 			alert("아이디를 입력해주세요");
 			$("#id").focus();
+			return false;
+		}else if($("#idcheck_msg").text() == ""){
+			alert("중복체크를 진행해주세요");
+			$("#btnIdCheck").focus();
 			return false;
 		}else if($("#pass").val() == ""){
 			alert("패스워드를 입력해주세요");
