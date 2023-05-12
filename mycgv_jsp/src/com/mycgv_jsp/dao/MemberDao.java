@@ -4,6 +4,32 @@ import com.mycgv_jsp.vo.MemberVo;
 
 public class MemberDao extends DBConn{
 	/**
+	 * loginCheck - 로그인 체크
+	 */
+	public int loginCheck(MemberVo memberVo) {
+		int result = 0;
+		String sql = "select count(*) from mycgv_member where id=? and pass=?";
+		getPreparedStatement(sql);
+		
+		try {
+			pstmt.setString(1, memberVo.getId());
+			pstmt.setString(2, memberVo.getPass());
+			
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				result = rs.getInt(1);
+			}			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	
+	
+	/**
 	 * idCheck - 아이디 중복체크
 	 */
 	public int idCheck(String id) {
