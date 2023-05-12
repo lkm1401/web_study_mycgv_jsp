@@ -1,5 +1,19 @@
 $(document).ready(function(){
 	/*******************************************
+		게시판 - 수정 폼
+	********************************************/
+	$("#btnBoardUpdate").click(function(){
+		if($("#btitle").val() == ""){
+			alert("제목을 입력해주세요");
+			$("#btitle").focus();
+			return false;
+		}else{
+			updateForm.submit();
+		}
+	});	
+	
+	
+	/*******************************************
 		게시판 - 등록폼
 	********************************************/
 	$("#btnBoardWrite").click(function(){

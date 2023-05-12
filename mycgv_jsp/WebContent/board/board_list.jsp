@@ -43,7 +43,7 @@
 				<% for(BoardVo boardVo : list){ %>
 				<tr>
 					<td><%= boardVo.getRno() %></td>
-					<td><a href="board_content.jsp"><%=boardVo.getBtitle() %></a></td>
+					<td><a href="board_content.jsp?bid=<%=boardVo.getBid() %>"><%= boardVo.getBtitle()%></a></td>
 					<td><%= boardVo.getBhits() %></td>
 					<td><%= boardVo.getId() %></td>
 					<td><%= boardVo.getBdate() %></td>
