@@ -41,8 +41,6 @@ SELECT * FROM USER_SEQUENCES;
 SELECT * FROM USER_TABLES WHERE TABLE_NAME='MYCGV_BOARD';
 
 
-
-
 SELECT * FROM USER_TABLES WHERE TABLE_NAME='MYCGV_MEMBER';
 DESC MYCGV_MEMBER;
 SELECT * FROM MYCGV_MEMBER;
@@ -51,6 +49,37 @@ commit;
 
 SELECT COUNT(*) FROM MYCGV_MEMBER WHERE ID='test';
 select count(*) from mycgv_member where id='hong' and pass='123dfdf4';
+
+-- 등록일자(내림차순) : ORDER BY BDATE DESC
+-- 행번호(ROWNUM) : 컬럼리스트에 ROWNUM RNO
+SELECT ROWNUM RNO, BID, BTITLE, BCONTENT, BHITS, ID, BDATE
+FROM (SELECT BID, BTITLE,BCONTENT,BHITS, ID, BDATE FROM MYCGV_BOARD
+          ORDER BY BDATE DESC);
+
+-- MYCGV_MEMBER 테이블에 등급(GRADE) 컬럼 추가
+-- VARCHAR2(10) 
+-- NULL 허용 형태로 추가후 --> 데이터 수정 후 제약사항 수정하여  NOT NULL
+SELECT * FROM MYCGV_MEMBER;
+ALTER TABLE MYCGV_MEMBER
+ADD GRADE VARCHAR2(10);
+
+-- 기존 데이터 등급 : GOLD
+UPDATE MYCGV_MEMBER SET GRADE='GOLD';
+SELECT * FROM MYCGV_MEMBER;
+COMMIT;
+
+-- 최근가입한 회원 기준으로 출력하며, 행번호도 함께 출력
+select rownum rno, id, name, to_char(mdate,'yyyy-mm-dd') mdate, grade
+from (select id, name, mdate, grade from mycgv_member
+        order by mdate desc);
+
+update mycgv_member set grade='GOLD' where id='smith';        
+commit;
+
+
+
+
+
 
 
 
