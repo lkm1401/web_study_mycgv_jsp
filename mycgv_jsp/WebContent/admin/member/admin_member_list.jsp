@@ -1,5 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import = "com.mycgv_jsp.dao.MemberDao" %>    
+<%@ page import = "com.mycgv_jsp.vo.MemberVo" %>    
+<%@ page import = "java.util.ArrayList" %>
+
+<%
+	MemberDao memberDao = new MemberDao();
+	ArrayList<MemberVo> list = memberDao.select(); 
+%>   
+    
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,40 +35,15 @@
 					<th>가입일자</th>
 					<th>회원등급</th>
 				</tr>
+				<% for(MemberVo memberVo : list){ %>
 				<tr>
-					<td>1</td>
-					<td>hong1234</td>
-					<td>홍길동</td>
-					<td>2021-10-07</td>
-					<td>GOLD</td>
-				</tr><tr>
-					<td>2</td>
-					<td>hong1234</td>
-					<td>홍길동</td>
-					<td>2021-10-07</td>
-					<td>GOLD</td>
-				</tr>				
-				<tr>
-					<td>3</td>
-					<td>hong1234</td>
-					<td>홍길동</td>
-					<td>2021-10-07</td>
-					<td>GOLD</td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<td>hong1234</td>
-					<td>홍길동</td>
-					<td>2021-10-07</td>
-					<td>GOLD</td>
-				</tr>
-				<tr>
-					<td>5</td>
-					<td>hong1234</td>
-					<td>홍길동</td>
-					<td>2021-10-07</td>
-					<td>GOLD</td>
-				</tr>				
+					<td><%= memberVo.getRno() %></td>
+					<td><%= memberVo.getId() %></td>
+					<td><%= memberVo.getName() %></td>
+					<td><%= memberVo.getMdate() %></td>
+					<td><%= memberVo.getGrade() %></td>
+				</tr>	
+				<% } %>	
 				<tr>
 					<td colspan="5"><< 1  2  3  4  5 >></td>
 				</tr>

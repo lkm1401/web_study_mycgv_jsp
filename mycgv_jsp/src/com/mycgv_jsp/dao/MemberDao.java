@@ -1,8 +1,41 @@
 package com.mycgv_jsp.dao;
 
+import java.util.ArrayList;
+
 import com.mycgv_jsp.vo.MemberVo;
 
 public class MemberDao extends DBConn{
+	/**
+	 * select - 회원리스트
+	 */
+	public ArrayList<MemberVo> select() {
+		ArrayList<MemberVo> list = new ArrayList<MemberVo>();
+		String sql = "select rownum rno, id, name, to_char(mdate,'yyyy-mm-dd') mdate, grade\r\n" + 
+				" from (select id, name, mdate, grade from mycgv_member\r\n" + 
+				"        order by mdate desc)";
+		getPreparedStatement(sql);
+		
+		try {						
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				MemberVo memberVo = new MemberVo();
+				memberVo.setRno(rs.getInt(1));
+				memberVo.setId(rs.getString(2));
+				memberVo.setName(rs.getString(3));
+				memberVo.setMdate(rs.getString(4));
+				memberVo.setGrade(rs.getString(5));
+				list.add(memberVo);   //콘솔창에러X, 화면출력X
+			}			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
+	
+	
 	/**
 	 * loginCheck - 로그인 체크
 	 */
@@ -58,8 +91,8 @@ public class MemberDao extends DBConn{
 	public int insert(MemberVo memberVo) {
 		int result = 0;
 		String sql = "insert into mycgv_member"
-				+ " (id,pass,name,gender,email,addr,tel,pnumber,hobbylist,intro,mdate) "
-				+ " values(?,?,?,?,?,?,?,?,?,?,sysdate)";
+				+ " (id,pass,name,gender,email,addr,tel,pnumber,hobbylist,intro,mdate,grade) "
+				+ " values(?,?,?,?,?,?,?,?,?,?,sysdate,'GOLD')";
 		getPreparedStatement(sql);
 		
 		try {

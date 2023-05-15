@@ -13,14 +13,21 @@ public class MemberVo {
 	
 	//member 테이블 컬럼 매핑
 	int rno;
-	String email, addr, pnumber, hobbyList, mdate;
+	String email, addr, pnumber, hobbyList, mdate, grade;
 	/*
 	 * email --> 폼에서  set X, 테이블 set O
 	 * email --> 폼에서  get O(email1+"@"+ email2), 테이블 get O
 	 * */
+		
 	
 	public String getId() {
 		return id;
+	}
+	public String getGrade() {
+		return grade;
+	}
+	public void setGrade(String grade) {
+		this.grade = grade;
 	}
 	public void setId(String id) {
 		this.id = id;
